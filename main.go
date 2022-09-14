@@ -21,6 +21,11 @@ func main() {
 		return nil
 	})
 
+	f.Path("/hello/hello").Type("POST").Type("GET").Func(func(w http.ResponseWriter, r *http.Request) error {
+		println("/hello")
+		return nil
+	})
+
 	if err := http.ListenAndServe(":4000", f); err != nil {
 		log.Fatal(err)
 	}
