@@ -26,6 +26,7 @@ type Func interface {
 }
 
 type mapRouterData struct {
-	method string
+	method map[string]bool
 	route  func(w http.ResponseWriter, r *http.Request) error
 }
+
