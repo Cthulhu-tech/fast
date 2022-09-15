@@ -1,6 +1,7 @@
 package Fast
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -9,7 +10,6 @@ func (r *Types) Type(method string) *Types {
 	var methodUpper = strings.ToUpper(method)
 
 	if _, ok := allMethods[methodUpper]; !ok {
-
 		errorPrint("method: \033[33m[ " + method + " ]\033[0m - not found")
 		return r
 	}
@@ -21,6 +21,8 @@ func (r *Types) Type(method string) *Types {
 	if _, ok := route[_name].method[methodUpper]; !ok {
 		route[_name].method[methodUpper] = true
 	}
-
+	
+	fmt.Println(route["/hello"])
+	
 	return r
 }
