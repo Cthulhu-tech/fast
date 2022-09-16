@@ -5,9 +5,6 @@ import "net/http"
 /*implements create / Path*/
 type F struct {}
 
-/*implements Middleware(Use) / Handler function*/
-type U struct{}
-
 type IPath interface {
 	Path(path string) IFastUniversal
 	ServeHTTP(w http.ResponseWriter, r *http.Request)

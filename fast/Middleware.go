@@ -1,6 +1,6 @@
 package Fast
 
-func (u *U) Use(callback func()) IFastUniversal {
+func (f *F) Use(callback func()) IFastUniversal {
 
-	return u
+	return f
 }

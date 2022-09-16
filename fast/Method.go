@@ -1,8 +1,8 @@
 package Fast
 
-func (u *U) Type(method string) IFastUniversal {
+func (f *F) Type(method string) IFastUniversal {
 
 	println(method)
 
-	return u
+	return f
 }
