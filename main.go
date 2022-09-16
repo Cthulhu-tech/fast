@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -11,18 +12,13 @@ func main() {
 
 	f := Fast.Create()
 
-	f.Path("/").Type("POST").Type("GET").Use(func() {}).Func(func(w http.ResponseWriter, r *http.Request) error {
-		println("/")
+	f.Path("/hello").Type("get").Func(func(w http.ResponseWriter, r *http.Request) error {
+		fmt.Fprintf(w, "/hello route")
 		return nil
 	})
 
-	f.Path("/hello").Type("POST").Type("GET").Func(func(w http.ResponseWriter, r *http.Request) error {
-		println("/hello")
-		return nil
-	})
-
-	f.Path("/hello/hello").Type("POST").Type("GET").Func(func(w http.ResponseWriter, r *http.Request) error {
-		println("/hello")
+	f.Path("/hello/hello").Type("get").Func(func(w http.ResponseWriter, r *http.Request) error {
+		fmt.Fprintf(w, "/hello/hello route")
 		return nil
 	})
 
