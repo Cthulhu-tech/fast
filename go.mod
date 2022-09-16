@@ -1,3 +1,3 @@
-module github.com/Cthulhu-tech/sinhronize
+module github.com/Cthulhu-tech/fast/tree/interface
 
-go 1.17
+go 1.19
