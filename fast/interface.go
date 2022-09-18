@@ -4,6 +4,8 @@ import "net/http"
 
 /*implements create / Path*/
 type F struct{}
+type P struct{}
+type S struct{}
 
 type FuncCallback func()
 
@@ -11,12 +13,10 @@ type FuncCallbackHandler func(w http.ResponseWriter, r *http.Request)
 
 type IPath interface {
 	Path(path string) IFastUniversal
-	ServeHTTP(w http.ResponseWriter, r *http.Request)
 }
 
-type IFast interface {
-	create() IPath
-	IPath
+type IServer interface {
+	ServeHTTP(w http.ResponseWriter, r *http.Request)
 }
 
 type IFastUniversal interface {
