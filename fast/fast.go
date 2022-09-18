@@ -5,16 +5,14 @@ import (
 	"net/http"
 )
 
-func (f *F) NewCoolMethod() {
-	println("Yes i'm cool method!")
-}
+var (
+	url        = ""
+	route      = make(map[string]RouteData)
+	allMethods = map[string]bool{"GET": true, "POST": true, "HEAD": true, "OPTIONS": true, "PUT": true, "DELETE": true, "CONNECT": true, "TRACE": true, "PATCH": true}
+)
 
 /*encapsulate method / create Fast*/
 func (f *F) create() IPath {
-
-	/*logic method*/
-	println("working with create")
-
 	return f
 }
 

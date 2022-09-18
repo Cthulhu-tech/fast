@@ -3,7 +3,11 @@ package Fast
 import "net/http"
 
 /*implements create / Path*/
-type F struct {}
+type F struct{}
+
+type FuncCallback func()
+
+type FuncCallbackHandler func(w http.ResponseWriter, r *http.Request)
 
 type IPath interface {
 	Path(path string) IFastUniversal
@@ -17,9 +21,14 @@ type IFast interface {
 
 type IFastUniversal interface {
 	/*Middleware*/
-	Use(callback func()) IFastUniversal
+	Use(callback FuncCallback) IFastUniversal
 	/*URL method*/
 	Type(method string) IFastUniversal
 	/*Last function*/
-	Handler(func(w http.ResponseWriter, r *http.Request))
+	Handler(calback FuncCallbackHandler)
+}
+
+type RouteData struct {
+	method map[string]bool
+	route  FuncCallbackHandler
 }
