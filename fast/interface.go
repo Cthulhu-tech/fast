@@ -2,17 +2,30 @@ package Fast
 
 import "net/http"
 
+type Callback func(w http.ResponseWriter, r *http.Request)
+
 /*implements create / Path*/
-type F struct {}
+type Path_ struct{}
+type Fast_ struct{}
+type Method_ struct{}
+type Server_ struct{}
 
 type IPath interface {
-	Path(path string) IFastUniversal
+	Path(path string) IPath
+}
+
+type IServer interface {
 	ServeHTTP(w http.ResponseWriter, r *http.Request)
 }
 
+type IMethod interface {
+	Method(method string) IMethod
+}
+
 type IFast interface {
-	create() IPath
-	IPath
+	create() IServer
+	path() IPath
+	method() IMethod
 }
 
 type IFastUniversal interface {

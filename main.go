@@ -8,10 +8,9 @@ import (
 )
 
 func main() {
+	s := Fast.Create()
 
-	f := Fast.Create()
-	
-	if err := http.ListenAndServe(":4000", f); err != nil {
+	if err := http.ListenAndServe(":4000", s); err != nil {
 		log.Fatal(err)
 	}
 

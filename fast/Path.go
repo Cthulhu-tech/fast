@@ -1,10 +1,17 @@
 package Fast
 
-/*Global method*/
-func (f *F) Path(path string) IFastUniversal {
-
+/*encapsulate method / create Fast*/
+func (f *Fast_) path() IPath {
 	/*logic method*/
-	println(path)
+	return &Path_{}
+}
 
-	return f
+/*func create Fast Path*/
+func (p *Path_) Path(path string) IPath {
+	return createPath(&Fast_{})
+}
+
+/*func create encapsulate method*/
+func createPath(f IFast) IPath {
+	return f.path()
 }
