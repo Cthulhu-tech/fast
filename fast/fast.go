@@ -5,16 +5,10 @@ import (
 	"net/http"
 )
 
-func (f *F) NewCoolMethod() {
-	println("Yes i'm cool method!")
-}
-
 /*encapsulate method / create Fast*/
 func (f *F) create() IPath {
 
 	/*logic method*/
-	println("working with create")
-
 	return f
 }
 
@@ -29,5 +23,14 @@ func createHandler(f IFast) IPath {
 
 /*func create Fast handler*/
 func Create() IPath {
+
+	print(
+		",------.               ,--.  \n" +
+			"|  .---',--,--. ,---.,-'  '-.\n" +
+			"|  `--,' ,-.  |(  .-''-.  .-'\n" +
+			"|  |`  \\ '-'  |.-'  `) |  | \n" +
+			"`--'    `--`--'`----'  `--'  \n" +
+			"_____________________________\n" +
+			"\n" + "Starting with: \n")
 	return createHandler(&F{})
 }
