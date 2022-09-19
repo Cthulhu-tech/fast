@@ -1,5 +1,7 @@
 package Fast
 
+import Utils "github.com/Cthulhu-tech/fast/tree/interface/fast/utils"
+
 /*encapsulate method / create Fast*/
 func (f *Fast_) path() IPath {
 	/*logic method*/

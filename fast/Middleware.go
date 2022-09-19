@@ -1,5 +1,5 @@
 package Fast
 
-func (f *Fast_) Use(callback func()) {
+func (f *F) Use(callback FuncCallback) IFastUniversal {
 
 }
