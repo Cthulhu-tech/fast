@@ -1,17 +1,17 @@
 package Fast
 
-var (
-	url        = ""
-	route      = make(map[string]RouteData)
-	allMethods = map[string]bool{"GET": true, "POST": true, "HEAD": true, "OPTIONS": true, "PUT": true, "DELETE": true, "CONNECT": true, "TRACE": true, "PATCH": true}
-)
-
-/*encapsulate method / create Fast*/
-func (p Path) create() (IPath, IServer) {
-	return p, &S{}
+/*func create encapsulate method*/
+func createHandler(f IFast) IServer {
+	return f.create()
 }
 
 /*func create Fast handler*/
-func Create() (IPath, IServer) {
-	return p.create()
+func Create() (IServer) {
+	return createHandler(&Fast_{})
+}
+
+/*encapsulate method / create Fast*/
+func (f *Fast_) create() IServer {
+	/*logic method*/
+	return &Server_{}
 }

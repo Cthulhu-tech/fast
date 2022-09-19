@@ -1,8 +1,17 @@
 package Fast
 
-func (f *F) Type(method string) IFastUniversal {
+/*encapsulate method / create Fast*/
+func (f *Fast_) method() IMethod {
+	/*logic method*/
+	return &Method_{}
+}
 
-	println(method)
+/*func create Fast Path*/
+func (p *Method_) Method(method string) IMethod {
+	return createMethod(&Fast_{})
+}
 
-	return f
+/*func create encapsulate method*/
+func createMethod(f IFast) IMethod {
+	return f.method()
 }

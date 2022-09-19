@@ -5,6 +5,6 @@ import (
 	"net/http"
 )
 
-func (s *S) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (s *Server_) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "work")
 }

@@ -8,14 +8,14 @@ import (
 )
 
 func main() {
-z
+
 	f := Fast.Create()
 	
 	f.Path("/")
 	
 	f.Path("/fast")
-
-	if err := http.ListenAndServe(":4000", f); err != nil {
+  
+	if err := http.ListenAndServe(":4000", s); err != nil {
 		log.Fatal(err)
 	}
 
