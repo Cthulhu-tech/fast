@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-
+z
 	f := Fast.Create()
 	
 	f.Path("/")
